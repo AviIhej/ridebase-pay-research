@@ -11,6 +11,7 @@ description: Playbook for finding Canadian and US driver-pay buyers for Ridebase
 3. Push to develop and research/payments-ca every 25 rows. Update payments/STATUS.md each time.
 
 ## Sources that gave rows fastest
+0. Provincial licensee lists. The BC Passenger Transportation Board taxi licensee list (https://www.ptboard.bc.ca/taxi-licensee-list) gave 22 rows in 30 minutes, the best rate so far. Try a direct list URL when a search page is blocked.
 1. Municipal licence lists. City of Toronto open data (datastore API, Category TAXICAB BROKER, no cancel date) and City of Calgary broker pages. They give names and phones. Then find each company's own site.
 2. Web search by city with directory domains blocked (yelp, yp, bbb, facebook, indeed, linkedin, wikipedia). Keep only results on a company's own domain.
 3. Bulk domain probing. Try name.ca and name.com for 30 names and keep sites whose title matches.
@@ -27,6 +28,12 @@ description: Playbook for finding Canadian and US driver-pay buyers for Ridebase
 - Can I reach each company's own page?
 - Does it show size or pay terms for at least one in five?
 - If two page reads show neither, drop the site.
+
+## Pitfalls
+- Confirm emails against raw page text. A short regex cut .qc.ca and .mb.ca domains.
+- Phrase searches for pay terms return job boards. Find the company, then read its careers page.
+- Small taxi sites rarely show size. Read home plus about plus careers, then stop.
+- Verify a push with git ls-remote origin refs/heads/<branch>.
 
 ## Row rules
 - size_basis starts with Sourced or No source yet.

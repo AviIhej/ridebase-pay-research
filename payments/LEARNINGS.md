@@ -24,3 +24,13 @@ Minutes in YIELD.csv are approximate, read from the session clock.
 - Edmonton open data keyword search for taxi (returns Chicago data)
 - cptdb.ca taxi wiki page (no company links)
 - Courier and airport shuttle searches with a pay phrase (return job boards and trucking carriers)
+12. Email regex cut off two-dot domains. Symptom: info@unicitytaxi.mb and info@taxichamplain.qc instead of .mb.ca and .qc.ca. Fix: allow dots inside the domain and re-check the raw page text. Rule: confirm every email against the raw page before writing it.
+13. Local ref for a second branch is missing in a shallow clone. Symptom: git log origin/research/payments-ca fails after a successful push. Fix: git ls-remote origin refs/heads/research/payments-ca shows the commit. Rule: verify a push with ls-remote.
+14. Phrase searches for pay terms ("paid weekly" with taxi or ride-hail) return job boards. Rule: find the company first, then read its careers page. Checkmate Cabs was found that way.
+15. The BC Passenger Transportation Board search page is challenged, but https://www.ptboard.bc.ca/taxi-licensee-list loads and lists every BC taxi licensee. Rule: try a direct list URL before giving up on a host.
+16. Directory domain guesses can hit the wrong company. Rule: check the city and name on the page before writing a row.
+
+## Dead ends (added)
+
+- "paid weekly" phrase searches for taxi or ride-hail companies
+- Uride and Kabu sites (script-loaded or spam pages)

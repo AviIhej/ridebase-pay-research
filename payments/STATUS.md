@@ -1,8 +1,8 @@
 # Status
 
-- Time: 2026-11-05 01:43 EST (06:43 UTC)
-- Rows in companies.csv: 52 (all Canada, 0 US)
-- Pushed so far: develop (commits 33ed4e1 and 1453dec). First push to research/payments-ca is in this commit.
-- Working on: Canada, taxi and accessible transport company sites
-- Next source: remaining Toronto licence-list brokers, then Calgary limousine list, then Quebec and Atlantic taxi companies
+- Time: 2026-11-05 01:52 EST
+- Rows in companies.csv: 79 (all Canada, 0 US)
+- Pushed: develop and research/payments-ca
+- Source just finished: BC Passenger Transportation Board taxi licensee list and Alberta, Ontario and Quebec company sites
+- Next source: Nova Scotia, Newfoundland, Ottawa and Toronto brokers, then the US pass starting with state ride-hail permit lists
 - Stop time: 16:30 EST today

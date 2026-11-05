@@ -8,13 +8,16 @@ Run date: 2026-11-05. Fetches used `curl` with the user agent `ridebase-research
 |---|---|---|
 | City of Toronto Open Data, Business licences and permits | https://open.toronto.ca/dataset/municipal-licensing-and-standards-business-licences-and-permits/ | Licence records including the category TAXICAB BROKER (113 records, 20 active with no cancel date on 2026-11-05) and LIMOUSINE SERVICE COMPANY (239 records, 13 active). Query the datastore API with the resource id 169e90ba-3ae0-43dd-8b2f-919e87002f50 and filter on Category. |
 | City of Calgary, Taxi and limousine brokerages | https://www.calgary.ca/taxis-ride-share/brokers.html and https://www.calgary.ca/taxis-ride-share/licensed-operators.html | Four licensed taxi brokerages (list dated Nov. 20, 2023) and 33 limousine brokerages (list dated Sep. 6, 2024), with phone numbers. |
+| BC Passenger Transportation Board, Taxi licensee list (updated September 2026) | https://www.ptboard.bc.ca/taxi-licensee-list | Legal name, trade name and regional district for every BC taxi licensee. Used to find company names, then each company's own site was read. |
+| BC Employment Standards, ride-hail and delivery minimum wage | https://www2.gov.bc.ca/gov/content/employment-business/employment-standards-advice/employment-standards/forms-resources/igm/esr-part-4-section-18-2 | Minimum hourly wage for ride-hail workers applies to engaged time, and the platform must pay any shortfall in a pay period. |
 | Wikipedia, Taxis of Canada | https://en.wikipedia.org/wiki/Taxis_of_Canada | Secondary source. Names the Ottawa licensed taxi companies and the BC licensed ride-hailing companies. Used only to find names. |
 | Justice Laws, Income Tax Act, Part XX | https://laws-lois.justice.gc.ca/eng/acts/I-3.3/page-232.html and https://laws-lois.justice.gc.ca/eng/acts/I-3.3/page-233.html | Definitions of platform, platform operator, personal service, reporting platform operator, and the January 31 reporting date. |
 | Payments Canada press release | https://payments.ca/online-platforms-and-mobile-apps-frustrate-canadian-gig-workers-when-it-comes-pay-day-reveals-new | Leger survey of 1,501 Canadians, February 27 to March 10, 2023. Interac e-Transfer 43% for how gig workers are paid and 48% for how they want to be paid. |
 
 ## Lists I tried and could not use
 
-- BC Passenger Transportation Board search (https://www.ptboard.bc.ca/): behind a Cloudflare challenge. Not bypassed.
+- BC Passenger Transportation Board search page (https://www.ptboard.bc.ca/licensee_list.htm): behind a Cloudflare challenge. Not bypassed. The taxi licensee list page above works.
+- Search phrases such as "paid weekly" with taxi or ride-hail: returned job boards and guides, no company pages.
 - Commission des transports du Québec list of intermédiaires en services de transport: covers heavy-vehicle transport, not taxis.
 - City of Edmonton open data search for taxi: returned only Chicago data.
 - canada.ca CRA Part XX guidance: connection reset on every attempt.
