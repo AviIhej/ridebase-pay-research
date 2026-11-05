@@ -45,3 +45,10 @@ Minutes in YIELD.csv are approximate, read from the session clock.
 
 - fare.coop
 - Union Cab of Madison site (no readable text)
+23. Massachusetts (403 Not allowed), Colorado PUC (CloudFront 403) and Ohio PUCO (404) TNC list pages could not be fetched. Rule: do not retry; use the California list and company sites.
+24. Courier companies with weekly settlements were found by searching the wording "weekly settlements" or "paid weekly" with the word contractor, then reading the company's contractor page. Dallas Courier, County Couriers, NOW Courier, Courier Express and The Trucking For Me came from this. Rule: use settlement wording for logistics, not for taxi.
+25. Some courier home pages return headers only. Rule: read the contractor or careers page, which is server-rendered.
+
+## Dead ends (added)
+
+- Mass.gov, Colorado PUC and PUCO list pages

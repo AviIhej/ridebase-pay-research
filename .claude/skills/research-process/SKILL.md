@@ -35,6 +35,10 @@ description: Playbook for finding Canadian and US driver-pay buyers for Ridebase
 - US taxi sites rarely show size. Do not spend more than two page reads on one.
 - Every US row must say it is a pre-sell target only.
 
+## Logistics notes
+- Search for "weekly settlements" or "paid weekly" with the word contractor, then read the company's contractor page (Courier Express, Dallas Courier, County Couriers, NOW Courier).
+- Canadian courier sites gave far fewer pay statements than US ones.
+
 ## Pitfalls
 - Confirm emails against raw page text. A short regex cut .qc.ca and .mb.ca domains.
 - Phrase searches for pay terms return job boards. Find the company, then read its careers page.

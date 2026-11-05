@@ -5,8 +5,8 @@ Run date: 2026-11-05. Canada was done first. The United States pass is started a
 ## Not finished
 
 - The United States pass is thin: it has only the rows listed in the counts. It covers New York, Chicago, a few ride-hail startups and a few taxi companies. Texas, Colorado, Massachusetts, Ohio and most large cities have no rows.
-- Zero rows for the `logistics`, `shuttles` and `rideshare-companies` segments. Courier sites that I could read showed no driver pay terms, and the shuttle searches returned job boards.
-- 55 of 79 rows have no fleet or driver count. Most taxi sites publish none.
+- Zero rows for the `shuttles` and `rideshare-companies` segments. The shuttle searches returned job boards. Logistics has six rows, five in the US and one in Canada. Courier sites that publish weekly settlements were found only by searching for the settlement wording.
+- 72 of 104 rows have no fleet or driver count. Most taxi sites publish none.
 - No row has a public complaint about pay errors. I did not find one on a company's own page, and I did not use review sites.
 - No row has a job post that mentions payroll, bookkeeping or dispatch admin. The few careers pages I read list licence requirements only.
 - 19 Canadian taxi and limousine sites could not be read or gave no usable text. They are listed in `sources.md` with the reason.
@@ -26,6 +26,7 @@ Run date: 2026-11-05. Canada was done first. The United States pass is started a
 - LinkedIn: not scraped, per the rules.
 - Sites whose robots.txt disallowed my fetcher: skipped and listed in `sources.md`.
 - The BC Passenger Transportation Board search page: it sits behind a Cloudflare challenge and I did not bypass it. The taxi licensee list page loads without one and was used.
+- The Massachusetts, Colorado and Ohio ride-hail permit pages: forbidden, blocked and not found. Not retried.
 - canada.ca: the connection reset on every attempt. I used the Act text on Justice Laws instead.
 - Large national operators and the ride-hailing majors. The brief asks for regional operators.
 - Named personal emails: several sites publish a person's address. I did not record those. Rows carry a role inbox or a form, or say that none was found.
@@ -42,19 +43,19 @@ Run date: 2026-11-05. Canada was done first. The United States pass is started a
 
 No page told me to do anything. Two pages carried unrelated spam text (casino promotion in Turkish on whitecabrocks.ca and a casino page at kabu.ca). I ignored both and left them out of the CSV.
 
-## Counts (97 rows)
+## Counts (104 rows)
 
-By country: Canada 80, United States 17.
+By country: Canada 81, United States 23.
 
-By segment: taxi 71, tnc-startups 7, nemt 6, other 13, logistics 0, shuttles 0, rideshare-companies 0.
+By segment: taxi 71, tnc-startups 7, nemt 7, other 13, logistics 6, shuttles 0, rideshare-companies 0.
 
-By province (Canada): Ontario 24, British Columbia 23, Alberta 14, Quebec 6, Saskatchewan 4, Nova Scotia 3, Manitoba 3, New Brunswick 2, Prince Edward Island 1.
+By province (Canada): Ontario 24, British Columbia 23, Alberta 14, Quebec 6, Manitoba 4, Saskatchewan 4, Nova Scotia 3, New Brunswick 2, Prince Edward Island 1.
 
-By state (United States): NY 8, CA 3, IL 2, DC 1, Multiple states 1, Not stated on pages read 1, WA 1. Rows with several states or none stated are counted under their entry in the CSV.
+By state (United States): NY 8, IL 3, CA 3, DC 1, Multiple states 1, Not stated on pages read 1, WA 1, GA 1, TX 1, FL 1, IN 1, NJ 1.
 
-By size band (Calculated from the sourced vehicle or fleet counts in `driver_count_or_fleet`; the bands are my grouping): 500 or more 6, 200 to 499 12, 50 to 199 10, under 50 4, not published 65. Shareholder counts and trip counts were not used for bands, except Yellow Cab Vancouver, which uses its 325 owner-operator shareholders as the count. Richmond Taxi uses its 130 cabs, not the 1,000 drivers its about page claims. For New York black car bases the band uses the vehicles dispatched in May 2026 from the NYC TLC data, or the company's own fleet claim where one exists.
+By size band (Calculated from the sourced vehicle or fleet counts in `driver_count_or_fleet`; the bands are my grouping): 500 or more 6, 200 to 499 12, 50 to 199 10, under 50 4, not published 72. Shareholder counts and trip counts were not used for bands, except Yellow Cab Vancouver, which uses its 325 owner-operator shareholders as the count. Richmond Taxi uses its 130 cabs, not the 1,000 drivers its about page claims. For New York black car bases the band uses the vehicles dispatched in May 2026 from the NYC TLC data, or the company's own fleet claim where one exists.
 
-By fit score (Plan number: my own 1 to 5 score, see below): 5 has 4, 4 has 29, 3 has 34, 2 has 30.
+By fit score (Plan number: my own 1 to 5 score, see below): 5 has 7, 4 has 31, 3 has 36, 2 has 30.
 
 ## How rows were scored
 
@@ -81,8 +82,8 @@ Interac share (company claim: Interac e-Transfer is how Canadian gig workers are
 ## Gaps for the next run
 
 1. The rest of the United States pass: the Massachusetts, Colorado and Ohio ride-hail permit lists, the Texas licence list, and city taxi commission lists.
-2. Courier and delivery fleets that pay owner-operators by the run. Most carrier sites load their text by script and gave me nothing to read.
-3. Fleet counts for the 65 rows without one. Municipal plate counts by brokerage would fill most of them.
+2. More courier and delivery fleets, especially in Canada. Many carrier sites load their text by script and gave me nothing to read. Search for the words weekly settlement with contractor.
+3. Fleet counts for the 72 rows without one. Municipal plate counts by brokerage would fill most of them.
 4. Job posts that mention payroll or dispatch admin, and public complaints about pay errors.
 5. Prairie cabs that share a street address: Prairie Cabs and Yellow Cabs GP list the same Grande Prairie address and may be one operation.
 6. Quebec, Newfoundland and Labrador and the Territories.
