@@ -34,3 +34,14 @@ Minutes in YIELD.csv are approximate, read from the session clock.
 
 - "paid weekly" phrase searches for taxi or ride-hail companies
 - Uride and Kabu sites (script-loaded or spam pages)
+17. fare.coop returned 403 Forbidden to every automated fetch (home, FAQ, news). Rule: do not work around it; no row from search summaries alone.
+18. Spam takeover of expired taxi domains (denveryellowcab.com, metrotaxidenver.com, yellowcabhouston.com, flashcab.com). Rule: check the page title for the right city before reading further.
+19. NYC TLC FHV base data (data.cityofnewyork.us) lists every dispatch base with monthly trips and vehicles. Rule: use a $where on year and month with total_dispatched_trips over 3000 to skip the two largest apps. It gives names only; find the websites by probing.
+20. Chicago public passenger vehicle data gives active vehicles by company but no websites. Rule: probe domains from the names.
+21. US taxi company sites often show no size and publish only a named person's email. Rule: prefer black car, ride-hail and paratransit companies for US rows.
+22. Searching "[company] drivers commission percent weekly" works better for US black car and ride-hail companies than for taxi companies. NYBLACKCAR and SilverRide were found that way.
+
+## Dead ends (added)
+
+- fare.coop
+- Union Cab of Madison site (no readable text)

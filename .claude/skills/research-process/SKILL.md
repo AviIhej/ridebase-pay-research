@@ -29,6 +29,12 @@ description: Playbook for finding Canadian and US driver-pay buyers for Ridebase
 - Does it show size or pay terms for at least one in five?
 - If two page reads show neither, drop the site.
 
+## US pass notes
+- Best US evidence so far: black car, ride-hail and paratransit companies. They state commission and pay timing (NYBLACKCAR, SilverRide, Chill Out Ride).
+- NYC TLC FHV base data and the California TNC permit list give names and size. Chicago licence data gives names only.
+- US taxi sites rarely show size. Do not spend more than two page reads on one.
+- Every US row must say it is a pre-sell target only.
+
 ## Pitfalls
 - Confirm emails against raw page text. A short regex cut .qc.ca and .mb.ca domains.
 - Phrase searches for pay terms return job boards. Find the company, then read its careers page.

@@ -1,10 +1,10 @@
 # Ridebase Pay buyer research: Canada pass
 
-Run date: 2026-11-05. Scope of this run: Canada only. The United States pass has not started.
+Run date: 2026-11-05. Canada was done first. The United States pass is started and thin. Every US row is a pre-sell target only: the product does not handle US payouts today.
 
 ## Not finished
 
-- The United States pass has not started. There are no US rows in `companies.csv`.
+- The United States pass is thin: it has only the rows listed in the counts. It covers New York, Chicago, a few ride-hail startups and a few taxi companies. Texas, Colorado, Massachusetts, Ohio and most large cities have no rows.
 - Zero rows for the `logistics`, `shuttles` and `rideshare-companies` segments. Courier sites that I could read showed no driver pay terms, and the shuttle searches returned job boards.
 - 55 of 79 rows have no fleet or driver count. Most taxi sites publish none.
 - No row has a public complaint about pay errors. I did not find one on a company's own page, and I did not use review sites.
@@ -18,6 +18,7 @@ Run date: 2026-11-05. Scope of this run: Canada only. The United States pass has
 - City of Toronto business licence data (taxicab broker category), the City of Calgary taxi and limousine brokerage lists and the BC Passenger Transportation Board taxi licensee list, to find licensed companies.
 - Web searches by city and province for taxi companies, ride-hailing startups, non-emergency medical transport, accessible transport, airport shuttles, limousine and courier operators.
 - Each company's own pages: home, about, contact, careers and driver pages. A row exists only where I read the company's own page. Directory listings, review sites and job boards were not used as sources for rows.
+- US lists: the NYC Taxi and Limousine Commission FHV base report, the City of Chicago public passenger vehicle licence data and the California Public Utilities Commission TNC permit list, to find companies and size.
 - Primary sources for two claims: the Income Tax Act text on Justice Laws and a Payments Canada press release.
 
 ## What I skipped and why
@@ -31,21 +32,29 @@ Run date: 2026-11-05. Scope of this run: Canada only. The United States pass has
 - Free-mail addresses: two rows (Taxi Plus and Riders Cab) carry a Gmail address that the company itself publishes as its business contact. They are marked in `contact_role`.
 - A taxi site in the UK template style (premiertaxi.ca, "DBS cleared" text) and a Moncton site whose pages contain unrelated casino spam (whitecabrocks.ca): left out because I could not confirm they are active Canadian operators.
 
+## Sites that blocked or were spam in the US pass
+
+- fare.coop returned 403 to automated fetches. No row. I did not work around it.
+- denveryellowcab.com, metrotaxidenver.com, yellowcabhouston.com and flashcab.com serve unrelated spam. They are left out.
+- Yellow Cab Sacramento and several others publish only a named person's email, so those rows were not written.
+
 ## Injected or odd page text
 
 No page told me to do anything. Two pages carried unrelated spam text (casino promotion in Turkish on whitecabrocks.ca and a casino page at kabu.ca). I ignored both and left them out of the CSV.
 
-## Counts (79 rows)
+## Counts (97 rows)
 
-By country: Canada 79, United States 0.
+By country: Canada 80, United States 17.
 
-By segment: taxi 66, tnc-startups 5, nemt 4, other 4, logistics 0, shuttles 0, rideshare-companies 0.
+By segment: taxi 71, tnc-startups 7, nemt 6, other 13, logistics 0, shuttles 0, rideshare-companies 0.
 
-By province: Ontario 24, British Columbia 23, Alberta 14, Quebec 6, Saskatchewan 4, Manitoba 3, Nova Scotia 2, New Brunswick 2, Prince Edward Island 1.
+By province (Canada): Ontario 24, British Columbia 23, Alberta 14, Quebec 6, Saskatchewan 4, Nova Scotia 3, Manitoba 3, New Brunswick 2, Prince Edward Island 1.
 
-By size band (Calculated from the sourced vehicle or fleet counts in `driver_count_or_fleet`; the bands are my grouping): 500 or more 2, 200 to 499 9, 50 to 199 9, under 50 4, not published 55. Shareholder counts and trip counts were not used for bands, except Yellow Cab Vancouver, which uses its 325 owner-operator shareholders as the count. Richmond Taxi uses its 130 cabs, not the 1,000 drivers its about page claims.
+By state (United States): NY 8, CA 3, IL 2, DC 1, Multiple states 1, Not stated on pages read 1, WA 1. Rows with several states or none stated are counted under their entry in the CSV.
 
-By fit score (Plan number: my own 1 to 5 score, see below): 5 has 2, 4 has 22, 3 has 26, 2 has 29.
+By size band (Calculated from the sourced vehicle or fleet counts in `driver_count_or_fleet`; the bands are my grouping): 500 or more 6, 200 to 499 12, 50 to 199 10, under 50 4, not published 65. Shareholder counts and trip counts were not used for bands, except Yellow Cab Vancouver, which uses its 325 owner-operator shareholders as the count. Richmond Taxi uses its 130 cabs, not the 1,000 drivers its about page claims. For New York black car bases the band uses the vehicles dispatched in May 2026 from the NYC TLC data, or the company's own fleet claim where one exists.
+
+By fit score (Plan number: my own 1 to 5 score, see below): 5 has 4, 4 has 29, 3 has 34, 2 has 30.
 
 ## How rows were scored
 
@@ -71,9 +80,9 @@ Interac share (company claim: Interac e-Transfer is how Canadian gig workers are
 
 ## Gaps for the next run
 
-1. The United States pass, starting from state transportation network company permit lists and city taxi commission lists.
+1. The rest of the United States pass: the Massachusetts, Colorado and Ohio ride-hail permit lists, the Texas licence list, and city taxi commission lists.
 2. Courier and delivery fleets that pay owner-operators by the run. Most carrier sites load their text by script and gave me nothing to read.
-3. Fleet counts for the 55 rows without one. Municipal plate counts by brokerage would fill most of them.
+3. Fleet counts for the 65 rows without one. Municipal plate counts by brokerage would fill most of them.
 4. Job posts that mention payroll or dispatch admin, and public complaints about pay errors.
 5. Prairie cabs that share a street address: Prairie Cabs and Yellow Cabs GP list the same Grande Prairie address and may be one operation.
 6. Quebec, Newfoundland and Labrador and the Territories.

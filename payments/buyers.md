@@ -1,6 +1,6 @@
 # Who buys, what hurts, what they will say
 
-Scope: the 52 Canadian rows in `companies.csv`. Labels: Sourced, Calculated, No source yet, Plan number.
+Scope: the Canadian rows and the early US rows in `companies.csv`. US rows are pre-sell targets only; the product does not handle US payouts today. Labels: Sourced, Calculated, No source yet, Plan number.
 
 ## Who decides at each kind of company
 
@@ -29,6 +29,9 @@ No operator's own words about payroll, bookkeeping or dispatch admin pain were f
 - Apt Rides: "fair and transparent compensation" for drivers. Source: https://aptrides.com/about-us/
 - Checkmate Cabs (a taxi company, on pay timing): "Revenue and non-cash tips are paid weekly." Source: https://www.checkmatecabs.com/careers
 - Spinr: "Spinr never takes a share of the fare." Source: https://www.spinr.ca/
+
+- NYBLACKCAR (a black car company, on pay timing): "Statement sent on Mondays and payment made by direct deposit on Wednesday." Source: https://nyblackcar.com/become-a-driver/
+- SilverRide (an assisted transport platform): "Payment cadence: weekly." Source: https://silverride.com/drivers
 
 These show that startups sell transparent driver pay to recruit. They are a reason to approach them with a statement that shows each driver's figures.
 
