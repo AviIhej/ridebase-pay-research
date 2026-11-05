@@ -25,18 +25,26 @@ def keys():
             d = domain(r.get('website','')); 
             if d: doms.add(d)
             city = (r.get('hq_city') or r.get('city') or '').lower()
-            nc.add((nname(r['name']), city)); names.add(nname(r['name']))
+            nc.add((nname(r['name']), city)); names.add(canon(r['name']))
     return doms, nc, names
-def add_rows(rows, name_only=False):
+GENERIC = re.compile(r'taxi|cab|yellow|checker|limo|transport|car service|express')
+ALIAS = {'rasier':'uber technologies','uber usa':'uber technologies','lyft dba lyft washington':'lyft','silverride':'silver ride','executive ride':'opoli','nomad transit':'nomad transit'}
+def canon(n):
+    x = nname(n)
+    for k, v in ALIAS.items():
+        if x.startswith(k): return v
+    return x
+def add_rows(rows, name_only=None):
     doms, nc, names = keys()
     new = []
     for r in rows:
         d = domain(r.get('website',''))
         k = (nname(r['name']), r.get('hq_city','').lower())
-        if (d and d in doms) or k in nc or (name_only and k[0] in names):
+        c = canon(r['name'])
+        if (d and d in doms) or k in nc or (c in names and not GENERIC.search(c)):
             continue
         if d: doms.add(d)
-        nc.add(k); names.add(k[0]); new.append(r)
+        nc.add(k); names.add(c); new.append(r)
     exists = os.path.exists(OUT)
     with open(OUT, 'a', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=COLS, quoting=csv.QUOTE_ALL, extrasaction='ignore')
@@ -44,3 +52,8 @@ def add_rows(rows, name_only=False):
         for r in new: w.writerow({c: r.get(c, '') for c in COLS})
     print(f"added {len(new)} of {len(rows)}; total {len(load(OUT))}")
     return len(new)
+
+import datetime
+def mk(name, tier, country, st, city='', web='', ride='', reg='', pid='', ev='', src='', stype='regulator list', mk_='', parent='', size='', sb='No source yet', pay='Not stated on pages read', status='active', sdate='', score='2', why='Listed by regulator; pay terms and size unknown.', role='', email='', yf='', app='', play=''):
+    t = datetime.date.today().isoformat()
+    return dict(name=name, parent_company=parent, website=web, country=country, province_or_state=st, hq_city=city, markets_served=mk_, tier=tier, status=status, status_date=sdate or (t if status=='active' else ''), ride_types=ride, app_store_url=app, play_store_url=play, year_founded=yf, driver_count_or_fleet=size, size_basis=sb, how_they_pay_drivers=pay, contact_role=role, published_business_email_or_form=email, regulator_or_permit=reg, permit_id=pid, evidence_summary=ev, fit_score_1_to_5=score, fit_reason=why, source_url=src, source_type=stype, found_on=t)
