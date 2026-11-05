@@ -1,5 +1,5 @@
 # Status
-- Time: 2026-11-05T08:09:43Z
-- Rows: 479
-- Current source: NYC TLC bases 10+ vehicles, curated company sites
-- Next source: other state TNC lists (MA, CO, TX, FL, GA, AZ, NV, MN, OR, PA, NJ, MD, VA)
+- Time: 2026-11-05T08:11:01Z
+- Rows: 493
+- Current source: niche and defunct searches done; skill and learnings written
+- Next source: airport permit lists, GitHub datasets, taxi-with-app search, more state and city lists
