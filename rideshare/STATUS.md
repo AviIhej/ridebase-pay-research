@@ -1,6 +1,5 @@
 # Status
-- Time: 2026-11-05T08:03:48Z
-- Rows: 0
-- Current source: setup, checking network and API access
-- Next source: NYC TLC and California CPUC TNC lists, Socrata portals
-- Stop time: 4:30pm Eastern
+- Time: 2026-11-05T08:05:11Z
+- Rows: 227
+- Current source: NYC TLC FHV base data (done, bases with 20+ vehicles)
+- Next source: California CPUC TNC list, Chicago BACP, Massachusetts DPU, other state lists
