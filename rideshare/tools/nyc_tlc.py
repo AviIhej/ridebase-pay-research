@@ -22,7 +22,7 @@ for r in data:
 rows = []
 today = datetime.date.today().isoformat()
 for key, r in agg.items():
-    if r['n'] < 20: continue
+    if r["n"] < int(sys.argv[1] if len(sys.argv)>1 else 20): continue
     city, st = parse(r.get('base_address',''))
     w = r.get('website','')
     web = '' if '@' in w or '.' not in w else w if w.startswith('http') else 'https://' + w.lower()
@@ -34,6 +34,6 @@ for key, r in agg.items():
         how_they_pay_drivers='Not stated in the registry', contact_role='Base dispatch office', 
         regulator_or_permit='NYC Taxi and Limousine Commission FHV base', permit_id=', '.join(r['bases']),
         evidence_summary=f"Active TLC-licensed FHV base with {r['n']} affiliated active vehicles. Registry shows address {r.get('base_address','').replace('  ',' ')} and phone {r.get('base_telephone_number','')}. App or driver pay terms not yet checked.",
-        fit_score_1_to_5='3' if r['n']>=100 else '2', fit_reason='Calculated: fleet of 100 or more affiliated vehicles means many drivers to pay.' if big else 'Calculated: 20 to 99 affiliated vehicles, pay terms unknown.',
+        fit_score_1_to_5='3' if r['n']>=100 else '2', fit_reason='Calculated: fleet of 100 or more affiliated vehicles means many drivers to pay.' if big else 'Calculated: under 100 affiliated vehicles, pay terms unknown.',
         source_url='https://data.cityofnewyork.us/Transportation/For-Hire-Vehicles-FHV-Active/8wbx-tsch', source_type='regulator open data', found_on=today))
 print(len(rows)); add_rows(rows)

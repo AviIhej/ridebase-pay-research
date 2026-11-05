@@ -2,3 +2,6 @@ source,minutes_spent,companies_added,quality_1_to_5
 NYC TLC FHV active vehicles (Socrata 8wbx-tsch),12,227,3
 California CPUC TNC permits issued page,10,16,4
 Washington DOL TNC licences (data.wa.gov ucdg-xgbj),8,9,4
+State regulator searches (NJ MA CO TX PA),15,0,2
+Curated company sites,10,7,4
+NYC TLC bases 10-19 vehicles,2,220,2
