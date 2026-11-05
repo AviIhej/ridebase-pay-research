@@ -1,7 +1,7 @@
 """Rows from news and trade articles found by web search on 2026-11-05: niche women-only, rural, and defunct companies. Each row cites the article."""
 import sys; sys.path.insert(0, __file__.rsplit('/',1)[0]); from common import *
 def r(n, tier, st, city, ride, ev, src, status='active', sdate='', country='US', mk_='', score='2', why='Found in news; size and pay terms unknown.', **k):
-    return mk(n, tier, country, st, city, ride=ride, ev=ev, src=src, stype='press', status=status, sdate=sdate, mk_=mk_, score=score, why=why, **k)
+    return mk(n, tier, country, st, city, web=k.pop('website',''), ride=ride, ev=ev, src=src, stype='press', status=status, sdate=sdate, mk_=mk_, score=score, why=why, **k)
 rows=[
  r('HERide','niche','GA','Atlanta','Women-only ride-hail (women drivers for women riders)','Atlanta News First (2022-04-20) reports a new all-female rideshare company launched in Atlanta; Jalopnik and Black Enterprise also cover HERide. Current status not confirmed.','https://www.atlantanewsfirst.com/2022/04/20/new-all-female-rideshare-company-launches-atlanta',status='unknown',mk_='Atlanta'),
  r('See Jane Go','niche','CA','Orange County','Women-only ride-hail','TechCrunch reported See Jane Go live in Orange County in 2016 for women riders and women drivers. Current status not confirmed.','https://techcrunch.com/?p=1385895',status='unknown',mk_='Orange County, California'),
@@ -17,5 +17,9 @@ rows=[
  r('Fasten','startup','MA','Boston','Ride-hail','Closed US operations in March 2018 after Vezet Group bought it (Austin Chronicle 2018-03-09).','https://www.austinchronicle.com/news/2018-03-09/fasten-calls-it-quits',status='defunct',sdate='2018-03',score='1',why='Defunct.'),
  r('Bridj','startup','MA','Boston','Microtransit','Shut down in May 2017 after failing to secure investment (Bloomberg 2017-05-01).','https://www.bloomberg.com/news/articles/2017-05-01/bridj-closes-after-losing-deal-with-car-company',status='defunct',sdate='2017-05-01',score='1',why='Defunct.'),
  r('RideAustin','niche','TX','Austin','Non-profit ride-hail','Austin Chronicle article on Fasten reports RideAustin volume rose 25 percent after Fasten closed in 2018; later status not confirmed.','https://www.austinchronicle.com/news/2018-03-09/fasten-calls-it-quits',status='unknown',mk_='Austin'),
+]
+add_rows(rows)
+rows=[
+ r('ZTrip','white-label operator','','','Taxi and for-hire ride-hailing app platform operated by Transdev','zTrip site (2026-11-05): taxi and transportation services for everyday rides, airports, businesses and events; pages for Driver Partners, Cities, Healthcare, Schools. technical.ly describes it as a Transdev platform that for-hire companies contract with.','https://www.ztrip.com',website='https://www.ztrip.com',score='3',why='Platform used by many taxi fleets; the fleets are the payers.'),
 ]
 add_rows(rows)
